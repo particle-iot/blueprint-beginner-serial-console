@@ -70,23 +70,3 @@ Cloud function available: printMsg(<optional text>)
 
 [12345 ms] Cloud says: Hello Tachyon
 ```
-
----
-
-## Extensions
-- Change the baud rate or print a formatted table of sensor values.  
-- Add another function (e.g., `clear`) to print separators or reset counters.  
-- Combine with `Particle.publish()` to log to the cloud and to Serial.
-
----
-
-## Assets
-| File | Purpose |
-|------|---------|
-| `images/hero.jpg` | Optional hero image (16:9) |
-| `images/console.png` | Screenshot of terminal output |
-
----
-
-## License
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
