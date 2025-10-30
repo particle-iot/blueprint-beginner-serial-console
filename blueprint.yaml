@@ -1,0 +1,36 @@
+slug: blueprint-beginner-serial-console
+type: Tutorial
+category: "Debugging & I/O"
+expertiseLevel: "Beginner"
+tags: ["Serial", "Console", "Function"]
+icon: assets/hero.jpg
+gitrepo: https://github.com/<your-org>/blueprint-beginner-serial-console
+name: "Serial Console Basics"
+shortDescription: "Open a USB serial terminal and print messages via a cloud function call."
+version: 1.0.0
+models: []
+language: ["C++"]
+cloudServices: []
+integrations: []
+supportedDevices:
+  - name: Any Wi-Fi or Cellular Device
+    link: https://docs.particle.io
+webIdeLink:
+webSetupLink:
+hardwareDependencies:
+  - name: Supported Particle device
+  - name: USB cable
+introduction: |
+  This beginner blueprint introduces the Serial terminal over USB. You'll learn how to
+  open a serial monitor and use a Particle Cloud function to print messages for quick debugging.
+description: |
+  The firmware initializes USB Serial at 9600 baud and registers a cloud function called `printMsg`.
+  When invoked from the Particle Console (optionally with an argument), the device prints a
+  timestamped message to the terminal. This provides a simple, reliable pattern for interactive debugging.
+additionalResources:
+  - title: Serial Reference
+    link: https://docs.particle.io/reference/device-os/firmware/#serial
+  - title: Particle Function Reference
+    link: https://docs.particle.io/reference/device-os/firmware/#particle-function-
+  - title: Firmware Template Best Practices
+    link: https://docs.particle.io/firmware/best-practices/firmware-template/
