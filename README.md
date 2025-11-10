@@ -62,11 +62,9 @@ It’s generously commented so this repo can serve as standalone documentation.
 ## Expected Output
 **Serial terminal (from `particle serial monitor --follow`):**
 ```
-=== Particle Serial Console Basics ===
-Baud: 9600  |  Data: 8N1
-Use 'particle serial monitor --follow' to view output.
-Cloud function available: printMsg(<optional text>)
---------------------------------------
-
-[12345 ms] Cloud says: Hello Tachyon
+0000020230 [app] INFO: [20230 ms] Cloud says: Hello Tachyon
 ```
+
+## Resources
+
+Checkout [https://docs.particle.io/firmware/best-practices/usb-serial/](https://docs.particle.io/firmware/best-practices/usb-serial/) for in depth tips on using USB serial on Particle devices. 

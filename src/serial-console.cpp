@@ -31,7 +31,9 @@
 SYSTEM_MODE(AUTOMATIC);
 
 // Run the application and system concurrently (keeps OTA responsive)
-SYSTEM_THREAD(ENABLED);
+#ifndef SYSTEM_VERSION_v620
+SYSTEM_THREAD(ENABLED); // System thread defaults to on in 6.2.0 and later and this line is not required
+#endif
 
 // Show logs over USB (view with: particle serial monitor --follow)
 SerialLogHandler logHandler(LOG_LEVEL_INFO);
@@ -50,9 +52,6 @@ int printMsgHandler(String command);
 // setup() — runs once on boot
 // -------------------------------------------------------------------
 void setup() {
-    // Start the USB serial port.
-    // Note: Serial is available over the same USB cable used for power/flash.
-    Serial.begin(SERIAL_BAUD);
 
     // (Optional) Wait briefly for a terminal to attach so the first lines are visible.
     // Do not block forever — keep OTA available.
@@ -68,13 +67,13 @@ void setup() {
     Particle.function("printMsg", printMsgHandler);
 
     // Friendly boot banner for the serial terminal
-    Serial.println();
-    Serial.println("=== Particle Serial Console Basics ===");
-    Serial.println("Baud: 9600  |  Data: 8N1");
-    Serial.println("Use 'particle serial monitor --follow' to view output.");
-    Serial.println("Cloud function available: printMsg(<optional text>)");
-    Serial.println("--------------------------------------");
-    Serial.println();
+   Log.info("");
+   Log.info("=== Particle Serial Console Basics ===");
+   Log.info("Baud: 9600  |  Data: 8N1");
+   Log.info("Use 'particle serial monitor --follow' to view output.");
+   Log.info("Cloud function available: printMsg(<optional text>)");
+   Log.info("--------------------------------------");
+   Log.info("");
 
     Log.info("Setup complete. Cloud function 'printMsg' is ready.");
 }
@@ -114,10 +113,7 @@ int printMsgHandler(String command) {
     }
 
     // Print a timestamped line to the serial terminal
-    Serial.printlnf("[%lu ms] %s", millis(), msg.c_str());
-
-    // Also log over the USB logging channel for visibility in CLI
-    Log.info("Printed to Serial: %s", msg.c_str());
+   Log.info("[%lu ms] %s", millis(), msg.c_str());
 
     return 1;
 }
