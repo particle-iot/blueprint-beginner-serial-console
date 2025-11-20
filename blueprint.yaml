@@ -3,7 +3,7 @@ type: Tutorial
 category: "Debugging & I/O"
 expertiseLevel: "Beginner"
 tags: ["Serial", "Console", "Function"]
-icon: assets/hero.jpg
+icon: assets/serial.svg
 gitrepo: https://github.com/<your-org>/blueprint-beginner-serial-console
 name: "Serial Console Basics"
 shortDescription: "Open a USB serial terminal and print messages via a cloud function call."
