@@ -2,7 +2,7 @@ slug: blueprint-beginner-serial-console
 type: Tutorial
 category: "Debugging & I/O"
 expertiseLevel: "Beginner"
-tags: ["Serial", "Console", "Function"]
+tags: ["Console", "Function"]
 icon: assets/serial.svg
 gitrepo: https://github.com/<your-org>/blueprint-beginner-serial-console
 name: "Serial Console Basics"
